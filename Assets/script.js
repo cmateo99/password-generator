@@ -2,8 +2,7 @@
 var generateBtn = document.querySelector("#generate");
 let useChar = "";
 function generatePassword(){
-    //useChar = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+~`|}{[]\\:;?><,./-=';
-    console.log(checkCriteria() + 'genlocation')
+       
     useChar = ""+ checkCriteria();
     var pWord = '';
     useCharLength = useChar.length;
@@ -11,12 +10,13 @@ function generatePassword(){
       pWord += useChar.charAt(Math.floor(Math.random() * useCharLength));
     }
     return pWord;
-  }
+    }
 
 // Write password to the #password input
 function writePassword() {
 
   var password = generatePassword();
+  console.log(password);
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
@@ -29,6 +29,7 @@ generateBtn.addEventListener("click", writePassword);
 //Criteria check
 
 function checkCriteria(){
+  useChar = "";
   var upperCheck = document.getElementById('uppercaseCheckbox');
   var lowerCheck=document.getElementById('lowercaseCheckbox');
   var numCheck = document.getElementById('num');
@@ -39,7 +40,6 @@ function checkCriteria(){
   console.log(specialCharCheck);  
   if (upperCheck.checked){
     useChar+="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  
   }
   if (lowerCheck.checked){
     useChar+="abcdefghijklmnopqrstuvwxyz";
