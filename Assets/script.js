@@ -2,11 +2,12 @@
 var generateBtn = document.querySelector("#generate");
 let useChar = "";
 function generatePassword(){
-       
+    var charInput = document.getElementById("myTextboxVal").value;
+    console.log("charinput "+charInput);   
     useChar = ""+ checkCriteria();
     var pWord = '';
     useCharLength = useChar.length;
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < charInput; i++) {
       pWord += useChar.charAt(Math.floor(Math.random() * useCharLength));
     }
     return pWord;
@@ -14,7 +15,8 @@ function generatePassword(){
 
 // Write password to the #password input
 function writePassword() {
-
+var showBox=document.querySelector('#cBoxes');
+showBox.style.display = 'block';
   var password = generatePassword();
   console.log(password);
   var passwordText = document.querySelector("#password");
