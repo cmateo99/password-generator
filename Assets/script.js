@@ -2,7 +2,8 @@
 var generateBtn = document.querySelector("#generate");
 let useChar = "";
 function generatePassword(){
-       
+    var charInput = document.getElementById("myTextboxVal").value;
+    console.log("charinput "+charInput);   
     useChar = ""+ checkCriteria();
     var pWord = '';
     useCharLength = useChar.length;
