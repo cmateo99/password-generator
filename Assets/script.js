@@ -3,6 +3,7 @@ var generateBtn = document.querySelector("#generate");
 let useChar = "";
 function generatePassword(){
     var charInput = document.getElementById("myTextboxVal").value;
+    if(charInput>=8 && charInput<=128){
     console.log("charinput "+charInput);   
     useChar = ""+ checkCriteria();
     var pWord = '';
@@ -11,6 +12,12 @@ function generatePassword(){
       pWord += useChar.charAt(Math.floor(Math.random() * useCharLength));
     }
     return pWord;
+  } else if(charInput===""){
+    return "";
+  } else{
+    return "Error: Please enter a number between 8 and 128."
+  }
+
     }
 
 // Write password to the #password input
