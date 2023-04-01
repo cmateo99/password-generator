@@ -4,19 +4,19 @@ let useChar = "";
 function generatePassword(){
     var charInput = document.getElementById("myTextboxVal").value;
     if(charInput>=8 && charInput<=128){
-    console.log("charinput "+charInput);   
-    useChar = ""+ checkCriteria();
-    var pWord = '';
-    useCharLength = useChar.length;
-    for (let i = 0; i < charInput; i++) {
-      pWord += useChar.charAt(Math.floor(Math.random() * useCharLength));
+      console.log("charinput "+charInput);   
+      useChar = ""+ checkCriteria();
+      var pWord = '';
+      useCharLength = useChar.length;
+      for (let i = 0; i < charInput; i++) {
+        pWord += useChar.charAt(Math.floor(Math.random() * useCharLength));
+      }
+      return pWord;
+    } else if(charInput==""){
+      return "";
+    } else{
+      return "Error: Please enter a number between 8 and 128."
     }
-    return pWord;
-  } else if(charInput===""){
-    return "";
-  } else{
-    return "Error: Please enter a number between 8 and 128."
-  }
 
     }
 
