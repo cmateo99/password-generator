@@ -15,7 +15,8 @@ function generatePassword(){
 
 // Write password to the #password input
 function writePassword() {
-
+var showBox=document.querySelector('#cBoxes');
+showBox.style.display = 'block';
   var password = generatePassword();
   console.log(password);
   var passwordText = document.querySelector("#password");
