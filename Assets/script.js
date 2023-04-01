@@ -7,7 +7,7 @@ function generatePassword(){
     useChar = ""+ checkCriteria();
     var pWord = '';
     useCharLength = useChar.length;
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < charInput; i++) {
       pWord += useChar.charAt(Math.floor(Math.random() * useCharLength));
     }
     return pWord;
