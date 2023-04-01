@@ -4,7 +4,7 @@ let useChar = "";
 function generatePassword(){
     var charInput = document.getElementById("myTextboxVal").value;
     if(charInput>=8 && charInput<=128){
-      console.log("charinput "+charInput);   
+        
       useChar = ""+ checkCriteria();
       var pWord = '';
       useCharLength = useChar.length;
@@ -25,7 +25,7 @@ function writePassword() {
 var showBox=document.querySelector('#cBoxes');
 showBox.style.display = 'block';
   var password = generatePassword();
-  console.log(password);
+  
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
@@ -43,10 +43,6 @@ function checkCriteria(){
   var lowerCheck=document.getElementById('lowercaseCheckbox');
   var numCheck = document.getElementById('num');
   var specialCharCheck = document.getElementById('specialChar');
-  console.log(upperCheck.checked)
-  console.log(lowerCheck);
-  console.log(numCheck);
-  console.log(specialCharCheck);  
   if (upperCheck.checked){
     useChar+="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   }
@@ -59,7 +55,7 @@ function checkCriteria(){
   if (specialCharCheck.checked == true){
     useChar+= "!@#$%^&*()_+~`|}{[]\\:;?><,./-=";
   }
-  console.log(useChar + 'This is in usechar');
+  
   return useChar;
   
 }
